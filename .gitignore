@@ -13,6 +13,13 @@ target/
 .springBeans
 .sts4-cache
 
+.idea
+build/
+output/
+target/
+.gradle
+*.iml 
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -29,3 +36,4 @@ build/
 
 ### VS Code ###
 .vscode/
+.idea
