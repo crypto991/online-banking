@@ -11,10 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import java.security.SecureRandom;
 
 @Configuration
 @EnableWebSecurity
@@ -50,10 +47,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
+
         http
-                .authorizeRequests().
+                .authorizeRequests()
+                .antMatchers("/h2-console/**").permitAll()
 //                antMatchers("/**").
-        antMatchers(PUBLIC_MATCHERS).
+                .antMatchers(PUBLIC_MATCHERS).
                 permitAll().anyRequest().authenticated();
 
         http
@@ -65,6 +65,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/index?logout").deleteCookies("remember-me").permitAll()
                 .and()
                 .rememberMe();
+
+        http.headers().frameOptions().disable();
+
+
+
+
     }
 
 
