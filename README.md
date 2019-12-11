@@ -24,5 +24,6 @@ jdbc:h2:mem:testdb
 
 Username:
 
-sa```
+sa
+```
 
