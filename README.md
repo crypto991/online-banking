@@ -2,7 +2,7 @@
 
 Getting Started
 
-* To install this Timesheet application, run the following commands:
+* To install this Online Banking application, run the following commands:
 ```bash
 cd Timesheet-App
 ```
