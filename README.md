@@ -4,7 +4,7 @@ Getting Started
 
 * To install this Online Banking application, run the following commands:
 ```bash
-cd Timesheet-App
+cd user-front
 ```
 **To install all of its dependencies and start each app, follow the instructions below:**
 
